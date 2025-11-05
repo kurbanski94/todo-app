@@ -1,12 +1,14 @@
-import { inject, NgModule } from '@angular/core';
+import { NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
 
 @NgModule({
-  declarations: [],
-  imports: [BrowserModule, HttpClientModule,  FormsModule],
+  declarations: [AppComponent],
+  imports: [BrowserModule, HttpClientModule, AppRoutingModule],
   providers: [],
+  bootstrap: [AppComponent]
 })
 export class AppModule {
   
