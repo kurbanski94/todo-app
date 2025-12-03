@@ -2,10 +2,9 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-modules',
+  standalone: true,
   imports: [],
   templateUrl: './modules.component.html',
-  styleUrl: './modules.component.css'
+  styleUrls: ['./modules.component.css'],
 })
-export class ModulesComponent {
-
-}
+export class ModulesComponent {}
