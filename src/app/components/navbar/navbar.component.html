@@ -1,3 +1,50 @@
-<div>
-    <span>{{ title }}</span>
-</div>
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar__brand">
+        <img class="navbar__img" [src]="logoUrl" alt="off my mind logo" />
+        <span class="navbar__title">{{ title }}</span>
+    </div>
+
+    <!-- center tabs -->
+    <div class="navbar__center">
+        <ul class="nav-tabs" role="tablist">
+            <li>
+                <a class="nav-tab" routerLink="/todos" routerLinkActive="active"
+                    [routerLinkActiveOptions]="{ exact: true }" (click)="selectTab('todos')">Zadania</a>
+            </li>
+            <li>
+                <a class="nav-tab" routerLink="/kanban" routerLinkActive="active"
+                    [routerLinkActiveOptions]="{ exact: true }" (click)="selectTab('kanban')">Kanban</a>
+            </li>
+            <li>
+                <a class="nav-tab" routerLink="/progress" routerLinkActive="active"
+                    [routerLinkActiveOptions]="{ exact: true }" (click)="selectTab('progress')">Postęp</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- right actions: add button + hamburger -->
+    <div class="navbar__actions">
+        <button type="button" class="add-btn" (click)="onAddClicked()" aria-label="Dodaj zadanie">
+            <!-- use edited PNG icon (transparent background, circular with white plus) -->
+            <img class="add-icon" src="assets/addTask.png" alt="Dodaj" />
+            <span class="add-text">Dodaj zadanie</span>
+        </button>
+
+        <button class="navbar__burger" (click)="toggleMobileMenu()" aria-label="Menu">
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
+        </button>
+    </div>
+
+    <!-- mobile menu (hamburger) -->
+    <div class="mobile-menu" *ngIf="mobileMenuOpen">
+        <ul>
+            <li><button class="mobile-link" type="button" (click)="navigate('/about')">O aplikacji</button></li>
+            <li><button class="mobile-link" type="button" (click)="navigate('/help')">Jak działa</button></li>
+            <li><button class="mobile-link" type="button" (click)="navigate('/reset')">Reset danych</button></li>
+            <li><button class="mobile-link" type="button" (click)="navigate('/version')">Wersja</button></li>
+        </ul>
+    </div>
+
+</nav>
