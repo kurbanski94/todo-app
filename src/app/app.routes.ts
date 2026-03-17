@@ -7,11 +7,6 @@ export const routes: Routes = [
     loadComponent: () => import('./todos').then((m) => m.TodosListComponent),
   },
   {
-    path: 'kanban',
-    loadComponent: () =>
-      import('./kanban/kanban.component').then((m) => m.KanbanComponent),
-  },
-  {
     path: 'progress',
     loadComponent: () =>
       import('./progress/progress.component').then((m) => m.ProgressComponent),

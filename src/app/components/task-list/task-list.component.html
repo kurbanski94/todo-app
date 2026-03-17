@@ -1,0 +1,20 @@
+<!-- Minimal Task list template — only basic structure to match component. -->
+<section class="task-list">
+    <header class="task-list__header">
+        <h2 class="task-list__title">Lista zadań</h2>
+
+        <div class="task-list__meta">
+            <span class="task-list__count">Wszystkie: <strong>{{ tasks.length }}</strong></span>
+        </div>
+    </header>
+
+    <div class="task-list__content">
+        <ul class="task-list__items">
+            <li class="task-list__item" *ngFor="let task of tasks" [attr.data-task-id]="task.id">
+                <span class="task-list__title">{{ task.title }}</span>
+            </li>
+        </ul>
+
+        <p class="task-list__empty" *ngIf="!tasks.length">Brak zadań — dodaj pierwsze zadanie w kodzie komponentu.</p>
+    </div>
+</section>
